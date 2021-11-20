@@ -1,4 +1,6 @@
 
+# A command to git clone the tp with the given number (to update when changing
+# the source path)
 gctp() { 
     if [ "$#" -ne 1 ]; then
         echo "not a possible tp"

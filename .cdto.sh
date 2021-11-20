@@ -1,6 +1,7 @@
 
 alias test='echo test'
 
+# A command to easily navigate in different directories
 cdto() {
     if [ "$#" -eq "0" ] ; then
         echo "No param"
