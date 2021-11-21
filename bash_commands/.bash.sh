@@ -37,6 +37,14 @@ cdto() {
                 #echo "Moving to OCR"
                 cd "/mnt/g/Data Ivan/cours/épita/Prog/Project S3 Sudoku OCR/OCR_C/"
                 ;;
+            "mc")
+                #echo "Moving to Minecraft"
+                cd "/mnt/g/Data Ivan/minecraft/"
+                ;;
+            "bash")
+                #echo "Moving to Bash files"
+                cd "/mnt/g/Data Ivan/code/Bash/bash-commands/bash_commands/"
+                ;;
             *)
                 echo "not a known path : '$path'"
                 ;;
