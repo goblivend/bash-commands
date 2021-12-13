@@ -45,6 +45,10 @@ cdto() {
                 #echo "Moving to Bash files"
                 cd "/mnt/g/Data Ivan/code/Bash/bash-commands/bash_commands/"
                 ;;
+            "web")
+                #echo "Moving to new Website"
+                cd "/mnt/g/Data Ivan/code/Web/Website #1/website/"
+                ;;
             *)
                 echo "not a known path : '$path'"
                 ;;
