@@ -55,3 +55,12 @@ cdto() {
         esac
     fi
 }
+
+declare -a COMMANDS=(prog algo tp code c data ocr mc bash web)
+
+if [[ -n $COMP_LINE ]]; then
+    for arg in "${COMMANDS[@]}"; do
+        [[ ${arg:0:${#2}} = "${2,,}" ]] && echo "$arg"
+    done
+    exit
+fi

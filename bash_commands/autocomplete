@@ -1,0 +1,49 @@
+#!/usr/bin/bash
+
+# -------------------------------------------------- completion --------------------------------------------------
+
+# all the arguments available for this command
+declare -a COMMANDS=(complete line for me)
+
+if [[ -n $COMP_LINE ]]; then
+    for arg in "${COMMANDS[@]}"; do
+        [[ ${arg:0:${#2}} = "${2,,}" ]] && echo "$arg"
+    done
+    exit
+fi
+
+# -------------------------------------------------- end completion --------------------------------------------------
+
+
+
+
+
+
+
+
+
+# -------------------------------------------------- Tries for delegation --------------------------------------------------
+# does not really work for now
+:'
+
+_complete() {
+    echo complete
+}
+
+_line() {
+    echo line
+}
+
+_for() {
+    echo for
+}
+_me() {
+    echo me
+}
+# -------------------------------------------------- delegation --------------------------------------------------
+
+declare cmd="$1"; shift
+for c in "${COMMANDS[@]}"; do
+    [[ $c == "$cmd" ]] && "_$cmd" "$@" && exit $?
+done
+'
