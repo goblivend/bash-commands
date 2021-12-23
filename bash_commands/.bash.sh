@@ -50,7 +50,7 @@ cdto() {
                 cd "/mnt/g/Data Ivan/code/Web/Website #1/website/"
                 ;;
             *)
-                echo "not a known path : '$path'"
+                echo "not a known path : '$1'"
                 ;;
         esac
     fi
