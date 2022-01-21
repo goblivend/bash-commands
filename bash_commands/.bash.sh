@@ -60,7 +60,7 @@ cdto() {
     fi
 }
 
-declare -a COMMANDS=(prog algo tp code c data ocr mc bash web)
+declare -a COMMANDS=(prog algo tp code c data ocr mc bash web java)
 
 if [[ -n $COMP_LINE ]]; then
     for arg in "${COMMANDS[@]}"; do

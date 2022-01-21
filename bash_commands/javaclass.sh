@@ -25,11 +25,11 @@ echo ". ${FILENAME}"
 echo ${main}
 echo "#########"
 if [ -f ${FILENAME} ]; then
-    echo "jmain : The file '$FILENAME' already exists."
+    echo "jclass : The file '$FILENAME' already exists."
 else
 
     #if  [[ $NAME =~ (([0-9]+.*)|(.*[.\/*\-+&é~\"#\'\{\(\[\`\|è_\\ç\^à@\)\]\}]+.*)) ]] ; then
-    #    echo "jmain : The class '$NAME' contains forbidden characters."
+    #    echo "jclass : The class '$NAME' contains forbidden characters."
     #else
         echo "##########"
         printf "// imports here\n\n" | tee ${FILENAME}
