@@ -13,6 +13,14 @@ cdto() {
                 #echo "Moving to Prog"
                 cd "/mnt/g/Data Ivan/cours/épita/Prog/"
                 ;;
+            "cours")
+                #echo "Moving to Prog"
+                cd "/mnt/g/Data Ivan/cours/"
+                ;;
+            "s4")
+                #echo "Moving to s4Inter"
+                cd "/mnt/g/Data Ivan/cours/épita/S4 inter/"
+                ;;
             "algo")
                 #echo "Moving to Algo"
                 cd "/mnt/g/Data Ivan/cours/épita/Algo/"
@@ -49,6 +57,22 @@ cdto() {
                 #echo "Moving to Java files"
                 cd "/mnt/g/Data Ivan/code/Java"
                 ;;
+            "cs")
+                #echo "Moving to C# files"
+                cd "/mnt/g/Data Ivan/code/C#"
+                ;;
+            "hackathon")
+                #echo "Moving to Hackathon files"
+                cd "/mnt/g/Data Ivan/code/Hackathon"
+                ;;
+            "python")
+                #echo "Moving to python files"
+                cd "/mnt/g/Data Ivan/code/Python"
+                ;;
+            "js")
+                #echo "Moving to JS files"
+                cd "/mnt/g/Data Ivan/code/JS"
+                ;;
             "web")
                 #echo "Moving to new Website"
                 cd "/mnt/g/Data Ivan/code/Web/Website #1/website/"
@@ -60,7 +84,7 @@ cdto() {
     fi
 }
 
-declare -a COMMANDS=(prog algo tp code c data ocr mc bash web java)
+declare -a COMMANDS=(prog algo tp code c data ocr mc bash web java cours s4 js python hackathon cs)
 
 if [[ -n $COMP_LINE ]]; then
     for arg in "${COMMANDS[@]}"; do
