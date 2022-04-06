@@ -77,6 +77,10 @@ cdto() {
                 #echo "Moving to new Website"
                 cd "/mnt/g/Data Ivan/code/Web/Website #1/website/"
                 ;;
+            "modded")
+                #echo "Moving to modded files"
+                cd "/mnt/c/Users/ivani/AppData/Roaming/Minecraft/Instances/"
+                ;;
             *)
                 echo "not a known path : '$1', tring local path"
                 cd $1
@@ -85,7 +89,7 @@ cdto() {
     fi
 }
 
-declare -a COMMANDS=(prog algo tp code c data ocr mc bash web java cours s4 js python hackathon cs)
+declare -a COMMANDS=(prog algo tp code c data ocr mc bash web java cours s4 js python hackathon cs modded)
 
 if [[ -n $COMP_LINE ]]; then
     for arg in "${COMMANDS[@]}"; do
