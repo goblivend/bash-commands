@@ -3,82 +3,88 @@
 # A command to open the explorer in the working directory
 alias go="explorer.exe ."
 
+# A command to add the current path as a shortcut to the cdto command file
+addpath() {
+    # Get the path of the current script
+    SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+
+
+    name=$1
+    path=$(pwd)
+    cdto_path="$SCRIPT_DIR/.bash.sh"
+    # echo "Adding path $path"
+    # echo "With the name $name"
+    # echo "To the cdto.sh file located at $cdto_path"
+
+    # Check if the first arg exists
+    if [ -z "$name" ]; then
+        echo "No name given, using $path"
+    else
+        # Executing the python file to add the shortcut
+        python3 "$SCRIPT_DIR/addpath.py" "$path" "$name" "$cdto_path"
+        source "$cdto_path"
+    fi
+}
+
 # A command to easily navigate in different directories
 cdto() {
     if [ "$#" -eq "0" ] ; then
         echo "No param"
+        exit 1
     else
         case $1 in
             "prog")
-                #echo "Moving to Prog"
                 cd "/mnt/g/Data Ivan/cours/épita/Prog/"
                 ;;
             "cours")
-                #echo "Moving to Prog"
                 cd "/mnt/g/Data Ivan/cours/"
                 ;;
             "s4")
-                #echo "Moving to s4Inter"
                 cd "/mnt/g/Data Ivan/cours/épita/S4 inter/"
                 ;;
             "algo")
-                #echo "Moving to Algo"
                 cd "/mnt/g/Data Ivan/cours/épita/Algo/"
                 ;;
             "tp")
-                #echo "Moving to tp"
                 cd "/mnt/g/Data Ivan/cours/épita/Prog/C/"
                 ;;
             "code")
-                #echo "Moving to code"
                 cd "/mnt/g/Data Ivan/code/"
                 ;;
             "c")
-                #echo "Moving to code/c"
                 cd "/mnt/g/Data Ivan/code/C/"
                 ;;
             "data")
-                #echo "Moving to Data Ivan"
                 cd "/mnt/g/Data Ivan/"
                 ;;
             "ocr")
-                #echo "Moving to OCR"
                 cd "/mnt/g/Data Ivan/cours/épita/Prog/Project S3 Sudoku OCR/OCR_C/"
                 ;;
             "mc")
-                #echo "Moving to Minecraft"
                 cd "/mnt/g/Data Ivan/minecraft/"
                 ;;
             "bash")
-                #echo "Moving to Bash files"
                 cd "/mnt/g/Data Ivan/code/Bash/bash-commands/bash_commands/"
                 ;;
             "java")
-                #echo "Moving to Java files"
                 cd "/mnt/g/Data Ivan/code/Java"
                 ;;
             "cs")
-                #echo "Moving to C# files"
                 cd "/mnt/g/Data Ivan/code/C#"
                 ;;
             "hackathon")
-                #echo "Moving to Hackathon files"
                 cd "/mnt/g/Data Ivan/code/Hackathon"
                 ;;
             "python")
-                #echo "Moving to python files"
                 cd "/mnt/g/Data Ivan/code/Python"
                 ;;
             "js")
-                #echo "Moving to JS files"
                 cd "/mnt/g/Data Ivan/code/JS"
                 ;;
             "web")
-                #echo "Moving to new Website"
                 cd "/mnt/g/Data Ivan/code/Web/Website #1/website/"
                 ;;
             "modded")
-                #echo "Moving to modded files"
                 cd "/mnt/c/Users/ivani/AppData/Roaming/Minecraft/Instances/"
                 ;;
             *)
@@ -89,7 +95,7 @@ cdto() {
     fi
 }
 
-declare -a COMMANDS=(prog algo tp code c data ocr mc bash web java cours s4 js python hackathon cs modded)
+declare -a COMMANDS=(prog algo tp code c data ocr mc bash web java cours s4 js python hackathon cs modded tetete home abc)
 
 if [[ -n $COMP_LINE ]]; then
     for arg in "${COMMANDS[@]}"; do
