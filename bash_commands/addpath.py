@@ -1,7 +1,7 @@
 import sys
 import os
 
-print('cmd entry:', sys.argv)
+# print('cmd entry:', sys.argv)
 
 path = sys.argv[1]
 name = sys.argv[2]

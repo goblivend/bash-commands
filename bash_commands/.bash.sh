@@ -8,20 +8,31 @@ addpath() {
     # Get the path of the current script
     SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
 
-
     name=$1
     path=$(pwd)
     cdto_path="$SCRIPT_DIR/.bash.sh"
-    # echo "Adding path $path"
-    # echo "With the name $name"
-    # echo "To the cdto.sh file located at $cdto_path"
+    if [ -z "$name" ]; then
+        echo "No name given, using $path"
+    else
+        # Executing the python file to add the shortcut
+        python3 "$SCRIPT_DIR/addpath.py" "$path" "$name" "$cdto_path"
+        source "$cdto_path"
+    fi
+}
+
+# A command to delete the path with the given name from the .bash.sh file
+delpath() {
+    # Get the path of the current script
+    SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+    name=$1
+    cdto_path="$SCRIPT_DIR/.bash.sh"
 
     # Check if the first arg exists
     if [ -z "$name" ]; then
         echo "No name given, using $path"
     else
         # Executing the python file to add the shortcut
-        python3 "$SCRIPT_DIR/addpath.py" "$path" "$name" "$cdto_path"
+        python3 "$SCRIPT_DIR/delpath.py" "$name" "$cdto_path"
         source "$cdto_path"
     fi
 }
@@ -53,9 +64,6 @@ cdto() {
                 ;;
             "c")
                 cd "/mnt/g/Data Ivan/code/C/"
-                ;;
-            "data")
-                cd "/mnt/g/Data Ivan/"
                 ;;
             "ocr")
                 cd "/mnt/g/Data Ivan/cours/épita/Prog/Project S3 Sudoku OCR/OCR_C/"
@@ -95,7 +103,7 @@ cdto() {
     fi
 }
 
-declare -a COMMANDS=(prog algo tp code c data ocr mc bash web java cours s4 js python hackathon cs modded tetete home abc)
+declare -a COMMANDS=( prog algo tp code c  ocr mc bash web java cours s4 js python hackathon cs modded)
 
 if [[ -n $COMP_LINE ]]; then
     for arg in "${COMMANDS[@]}"; do
