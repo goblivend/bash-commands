@@ -40,8 +40,7 @@ delpath() {
 # A command to easily navigate in different directories
 cdto() {
     if [ "$#" -eq "0" ] ; then
-        echo "No param"
-        exit 1
+        echo "Specify where you want to go"
     else
         case $1 in
             "prog")
