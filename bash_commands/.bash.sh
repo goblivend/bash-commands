@@ -94,6 +94,12 @@ cdto() {
             "modded")
                 cd "/mnt/c/Users/ivani/AppData/Roaming/Minecraft/Instances/"
                 ;;
+			"data")
+				cd "/mnt/g/Data Ivan"
+				;;
+			"oom")
+				cd "/mnt/g/Data Ivan/cours/épita/S4 inter/Finland/OOM"
+				;;
             *)
                 echo "not a known path : '$1', tring local path"
                 cd $1
@@ -102,7 +108,7 @@ cdto() {
     fi
 }
 
-declare -a COMMANDS=( prog algo tp code c  ocr mc bash web java cours s4 js python hackathon cs modded)
+declare -a COMMANDS=( prog algo tp code c  ocr mc bash web java cours s4 js python hackathon cs modded data oom)
 
 if [[ -n $COMP_LINE ]]; then
     for arg in "${COMMANDS[@]}"; do
