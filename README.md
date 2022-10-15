@@ -22,12 +22,20 @@ The number of cmds executed : `\!` or `\#` for shorter one
 <https://www.vincentliefooghe.net/content/linux-unix-variables-du-prompt-ps1>
 <https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/>
 <https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html>
+<https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>
 
 WSL :
 
 ```sh
 export PS1="\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
 ```
+Epita :
+```sh
+PS1='\[\e[0;36m\]$? \[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ '
+```
+
+
+
 
 ## Scrot (epita screens)
 
