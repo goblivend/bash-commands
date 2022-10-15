@@ -18,11 +18,11 @@ might replace ``\H`` by ``\h``\
 might replace `\w` by `\W`\
 The number of cmds executed : `\!` or `\#` for shorter one
 
-<https://bashrcgenerator.com/>
-<https://www.vincentliefooghe.net/content/linux-unix-variables-du-prompt-ps1>
-<https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/>
-<https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html>
-<https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>
+<https://bashrcgenerator.com/>\
+<https://www.vincentliefooghe.net/content/linux-unix-variables-du-prompt-ps1>\
+<https://www.cyberciti.biz/faq/bash-shell-change-the-color-of-my-shell-prompt-under-linux-or-unix/>\
+<https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html>\
+<https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>\
 
 WSL :
 
