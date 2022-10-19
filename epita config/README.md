@@ -15,7 +15,7 @@ alias ls='ls --color=auto'
 
 Code Snipets : https://github.com/SirVer/ultisnips \
 Comments : https://github.com/tpope/vim-commentary \
-Surrounds : https://github.com/tpope/vim-surround
+Surrounds : https://github.com/tpope/vim-surround \
 Auto-pairs :
 
 ## i3 config
