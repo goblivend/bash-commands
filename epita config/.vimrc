@@ -142,16 +142,3 @@ for tool in s:opam_packages
   endif
 endfor
 " ## end of OPAM user-setup addition for vim / base ## keep this line
-
-" set tabstop=4
-" set shiftwidth=4
-" set expandtab
-
-" set listchars=eol:$,tab:>-,trail:.
-
-
-" set autoindent
-" set incsearch
-" set smartcase
-" set showmode
-
