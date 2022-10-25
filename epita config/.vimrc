@@ -48,28 +48,36 @@ syntax on
 
 set number
 set relativenumber 
+
 set cc=80
+
 set cursorline
+
 set autowrite
+set autoread
+
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
-set list listchars=tab:»·,trail:·
 set autochdir
 
-" set listchars=eol:$,tab:»,trail:· " ,space:·
+" set list listchars=tab:»·,trail:·,eol:$
+set listchars=eol:$,tab:»,trail:· " ,space:·
 " set list
 " set lcs=spaces:.
+
 set autoindent
 set incsearch
 set smartcase
+
 set showmode
 set showcmd
+
 set scrolloff=10
 set splitbelow
 set splitright
-set autoread
+
 set showmatch
 set hlsearch
 
