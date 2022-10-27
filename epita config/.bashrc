@@ -15,7 +15,6 @@ export LANG=en_US.utf8
 export NNTPSERVER="news.epita.fr"
 
 export EDITOR=vim
-#export EDITOR=emacs
 
 # Color support for less
 #export LESS_TERMCAP_mb=$'\E[01;31m'       # begin blinking
@@ -47,6 +46,7 @@ alias gclone='git clone'
 alias back='cd $OLDPWD'
 alias cf='clang-format -i'
 alias mymake='cp ~/afs/bash-commands/Makefile . && ls'
+alias gam='git ls-files --modified | xargs git add' 
 
 alias gcompile='gcc -Wextra -Wall -Werror -std=c99 -pedantic -fsanitize=address -g'
 alias ggrind='gcc -Wextra -Wall -Werror -std=c99 -pedantic -g'
