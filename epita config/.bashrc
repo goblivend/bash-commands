@@ -29,14 +29,20 @@ alias ls='ls --color=auto'
 alias grep='grep --color -n'
 OLDPS1='[\u@\h \W]\$ '
 
-__build_prompt()
-{
-    PS1="\[\e[0;36m\]$? \[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
-}
-#export PS1="\[\e[0;36m\]$?\[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
 
-PROMPT_COMMAND="__build_prompt${PROMPT_COMMAND}"
+# Test if current Terminal is xfce, since PROMPT_COMMAND does not seem to work the same way, just removing exit code
+# Only used when going to sup session
+if [ "$(ps -p $(ps -p $$ -o ppid=) -o args=)" == 'xfce4-terminal' ]; then
+    PS1="\[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
+else
+    __build_prompt()
+    {
+        PS1="\[\e[0;36m\]$? \[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
+    }
+    #export PS1="\[\e[0;36m\]$?\[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
 
+    PROMPT_COMMAND="__build_prompt${PROMPT_COMMAND}"
+fi
 
 alias gp='git push --follow-tags'
 alias gc='git commit -m'
