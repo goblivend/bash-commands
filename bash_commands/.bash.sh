@@ -112,6 +112,9 @@ cdto() {
 			"acdc")
 				cd "/mnt/g/Data Ivan/cours/épita/ACDC"
 				;;
+			"download")
+				cd "/mnt/g/_Docs/Download"
+				;;
             *)
                 echo "not a known path : '$1', tring local path"
                 cd $1
@@ -120,7 +123,7 @@ cdto() {
     fi
 }
 
-declare -a COMMANDS=( prog algo tp code c  ocr mc bash web java cours s4 js python hackathon cs modded data oom ing1 acdcode acdc)
+declare -a COMMANDS=( prog algo tp code c  ocr mc bash web java cours s4 js python hackathon cs modded data oom ing1 acdcode acdc download)
 
 if [[ -n $COMP_LINE ]]; then
     for arg in "${COMMANDS[@]}"; do
