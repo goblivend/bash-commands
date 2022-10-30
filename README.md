@@ -38,9 +38,6 @@ __build_prompt()
 PROMPT_COMMAND="__build_prompt$PROMPT_COMMAND"
 ```
 
-
-
-
 ## Scrot (epita screens)
 
 Scrot :
@@ -54,3 +51,9 @@ scort -d 5 -c # Wait 5 seconds before screen and puts countdown
 ```
 
 <https://ostechnix.com/take-screenshots-command-line-using-scrot-linux/>
+
+## Shell general
+
+cheat sheet to move around in command line
+<https://github.com/fliptheweb/bash-shortcuts-cheat-sheet>\
+
