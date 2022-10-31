@@ -10,3 +10,16 @@ complete -C <file path> <cmd name>
 
 <br />
 in the .bashrc
+### my.bashrc
+
+```sh
+setxkbmap -option caps:escape
+
+source /mnt/g/Data\ Ivan/code/Bash/bash-commands/bash_commands/.acdc.sh
+source /mnt/g/Data\ Ivan/code/Bash/bash-commands/bash_commands/.bash.sh
+source /mnt/g/Data\ Ivan/code/Bash/bash-commands/bash_commands/.git.sh
+source /mnt/g/Data\ Ivan/code/Bash/bash-commands/bash_commands/.java.sh
+
+complete -C "/mnt/g/Data\ Ivan/code/Bash/bash-commands/bash_commands/.bash.sh" cdto
+export DISPLAY=:0
+```
