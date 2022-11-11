@@ -38,6 +38,15 @@ __build_prompt()
 PROMPT_COMMAND="__build_prompt$PROMPT_COMMAND"
 ```
 
+Epita with git branch integration: 
+```sh
+__build_prompt()
+{
+    PS1="\[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00;36m\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
+}
+PROMPT_COMMAND="__build_prompt$PROMPT_COMMAND"
+
+
 ## Scrot (epita screens)
 
 Scrot :
