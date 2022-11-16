@@ -24,21 +24,21 @@ The number of cmds executed : `\!` or `\#` for shorter one
 <https://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html>\
 <https://tldp.org/HOWTO/Bash-Prompt-HOWTO/x329.html>\
 
-WSL :
+WSL / EPITA :
 
-```sh
-export PS1="\[\e]0;\u@\h: \w\a\]\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
-```
-Epita :
 ```sh
 __build_prompt()
 {
-    PS1="\[\e[0;36m\]$? \[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
+    PS1="\[\e[0;36m\]$? \[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00;36m\] \[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]\$ "
 }
-PROMPT_COMMAND="__build_prompt$PROMPT_COMMAND"
+
+
+if [ "$(ps -p $(ps -p $$ -o ppid=) -o args=)" != 'xfce4-terminal' ]; then
+    PROMPT_COMMAND="__build_prompt${PROMPT_COMMAND}"
+fi
 ```
 
-Epita with git branch integration: 
+with git branch integration: 
 ```sh
 __build_prompt()
 {
