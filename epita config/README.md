@@ -29,11 +29,14 @@ Host ssh.cri.epita.fr
     GSSAPIDelegateCredentials yes
 ```
 
-Then you need to "log in" to get access : ```sh
+Then you need to "log in" to get access : 
+```sh
 kinit -f xavier.login@CRI.EPITA.FR
-``` (the case is important)
+``` 
+(the case is important)
 
-then instead of browsing interactively, I advise to directly mount the afs : ```sh
+then instead of browsing interactively, I advise to directly mount the afs : 
+```sh
 mkdir -p ~/afs/ # Or anywhere, and any name you want
 sshfs -o reconnect xavier.login@ssh.cri.epita.fr:/afs/cri.epita.fr/user/l/lo/xavier.login/u/ afs # If you changed the name of the folder, change it here too
 ```
