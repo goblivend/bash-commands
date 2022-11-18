@@ -57,16 +57,16 @@ afs_reconnect() {
 
 you will need the commands `kinit` and `umount` `sshfs`
 
-In NixOs, you will have to add the packages `krb5` and `sshfs-fuse`
-
-you can do so by adding the following snippet in `/etc/nixos/configuration.nix`
-
+In NixOs, you will have to add the packages `krb5` and `sshfs-fuse`\
+you can do so by adding the following snippet in `/etc/nixos/configuration.nix`\
 (you will need the administrators rights to do so, you can do it using `sudo EDITOR /etc/nixos/configuration.nix`)
 ```nix
-environment.systemPackages = with pkgs; [
-    krb5
-    sshfs-fuse
-];
+{
+    environment.systemPackages = with pkgs; [
+        krb5
+        sshfs-fuse
+    ];
+}
 ``` 
 
 Then you will have to reload you configuration using `sudo nixos-rebuild switch`
