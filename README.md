@@ -66,3 +66,6 @@ scort -d 5 -c # Wait 5 seconds before screen and puts countdown
 cheat sheet to move around in command line
 <https://github.com/fliptheweb/bash-shortcuts-cheat-sheet>\
 
+## Polybar
+
+[Nice Plybar theme](https://github.com/matoruru/polybar-adapta-theme)
