@@ -38,7 +38,7 @@ kinit -f xavier.login@CRI.EPITA.FR
 then instead of browsing interactively, I advise to directly mount the afs : 
 ```sh
 mkdir -p ~/afs/ # Or anywhere, and any name you want
-sshfs -o reconnect xavier.login@ssh.cri.epita.fr:/afs/cri.epita.fr/user/l/lo/xavier.login/u/ afs # If you changed the name of the folder, change it here too
+sshfs -o reconnect xavier.login@ssh.cri.epita.fr:/afs/cri.epita.fr/user/l/lo/xavier.login/u/ ~/afs # If you changed the name of the folder, change it here too
 ```
 
 After some time, the connection will be closed between your folder and the afs.
@@ -48,7 +48,7 @@ In order to reestablish the connection to the afs, I advise to create this funct
 afs_reconnect() {
   kinit -f xavierlogin@CRI.EPITA.FR
   umount ~/afs/ # Or the path you chose
-  sshfs -o reconnect xavier.login@ssh.cri.epita.fr:/afs/cri.epita.fr/user/l/lo/xavier.login/u/ afs # If you changed the name of the folder, change it here too
+  sshfs -o reconnect xavier.login@ssh.cri.epita.fr:/afs/cri.epita.fr/user/l/lo/xavier.login/u/ ~/afs # If you changed the name of the folder, change it here too
 }
 ```
 
