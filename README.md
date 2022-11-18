@@ -68,5 +68,5 @@ cheat sheet to move around in command line
 
 ## Polybar
 
-[Nice Plybar theme](https://github.com/matoruru/polybar-adapta-theme)
+[Nice Plybar theme](https://github.com/matoruru/polybar-adapta-theme)\
 [Other one to look at](https://github.com/flyingcakes85/eos-clone-i3-theme)
