@@ -22,6 +22,8 @@ Auto-pairs :
 
 you can look at the cri's [documentation](https://doc.cri.epita.fr/from_home/afs/)
 
+Before beginning the setup, you will need these [prerequisite](### Prerequisites)
+
 The first step is to complete the file `~/.ssh/config` with : 
 ```ssh
 Host ssh.cri.epita.fr
@@ -51,6 +53,23 @@ afs_reconnect() {
   sshfs -o reconnect xavier.login@ssh.cri.epita.fr:/afs/cri.epita.fr/user/l/lo/xavier.login/u/ ~/afs # If you changed the name of the folder, change it here too
 }
 ```
+### Prerequisites
+
+you will need the commands `kinit` and `umount` `sshfs`
+
+In NixOs, you will have to add the packages `krb5` and `sshfs-fuse`
+
+you can do so by adding the following snippet in `/etc/nixos/configuration.nix`
+
+(you will need the administrators rights to do so, you can do it using `sudo EDITOR /etc/nixos/configuration.nix`)
+```nix
+environment.systemPackages = with pkgs; [
+    krb5
+    sshfs-fuse
+];
+``` 
+
+Then you will have to reload you configuration using `sudo nixos-rebuild switch`
 
 ## i3 config
 Located at `afs/.confs/config/i3/config`
