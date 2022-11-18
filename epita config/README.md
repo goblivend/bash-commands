@@ -22,7 +22,7 @@ Auto-pairs :
 
 you can look at the cri's [documentation](https://doc.cri.epita.fr/from_home/afs/)
 
-The first step is to complete the file `~/.ssh/config` with : ```ssh
+The first step is to complete the file `~/.ssh/config` with : ```
 Host ssh.cri.epita.fr
     GSSAPIAuthentication yes
     GSSAPIDelegateCredentials yes
