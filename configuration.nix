@@ -68,10 +68,11 @@
     };
   };
 
+
   # Found from  :github.com/angristan/nixos-config/blob/master/configuration.nix
   hardware.opengl.enable = true; # Perhaps need extra packages 
 
-
+    
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
@@ -120,6 +121,14 @@
     ];
   };
 
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "python3.10-kerberos-1.3.1"
+  ];
+
+
+  services.picom.enable = true;
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -134,11 +143,27 @@
     pavucontrol
     git
     gcc gdb
+    openboard
     clang-tools
+    discord
     SDL2.dev
+    pkgs.scrot
+    krb5
+    sshfs-fuse
+    man-pages-posix
+    man-pages
+    polybar
+    killall
+    rofi
+    pywal
+    calc
+    networkmanager_dmenu
+    keepassxc
+    python3
   ];
  
-  environment.variables.EDITOR = "vim"
+  environment.variables.EDITOR = "vim";
+  environment.variables.TERMINAL = "alacritty";
 
 
   # Some programs need SUID wrappers, can be configured further or are
