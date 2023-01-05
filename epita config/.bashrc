@@ -32,17 +32,12 @@ OLDPS1='[\u@\h \W]\$ '
 
 # Test if current Terminal is xfce, since PROMPT_COMMAND does not seem to work the same way, just removing exit code
 # Only used when going to sup session
-if [ "$(ps -p $(ps -p $$ -o ppid=) -o args=)" == 'xfce4-terminal' ]; then
-    PS1="\[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
-else
-    __build_prompt()
-    {
-        PS1="\[\e[0;36m\]$? \[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
-    }
-    #export PS1="\[\e[0;36m\]$?\[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
+__build_prompt()
+{
+    PS1="\[\e[0;36m\]$? \[\e[01;32m\](\A) \u@\h\[\e[00m\]:\[\e[01;34m\]\w\[\e[00;36m\] \$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')\[\e[00m\]\n\[\e[01;31m\]\j\[\e[00m\]$ "
+}
+PROMPT_COMMAND="__build_prompt$PROMPT_COMMAND"
 
-    PROMPT_COMMAND="__build_prompt${PROMPT_COMMAND}"
-fi
 
 alias gp='git push --follow-tags'
 alias gc='git commit -m'
@@ -57,6 +52,20 @@ alias gam='git ls-files --modified | xargs git add'
 alias gcompile='gcc -Wextra -Wall -Werror -std=c99 -pedantic -fsanitize=address -g'
 alias ggrind='gcc -Wextra -Wall -Werror -std=c99 -pedantic -g'
 alias gcriterion='gcc -Wextra -Wall -Werror -std=c99 -pedantic -g -lcriterion'
+
+afs_remount() {
+    echo "kinit -f ivan.imbert@CRI.EPITA.FR"
+    kinit -f ivan.imbert@CRI.EPITA.FR
+    
+    echo "unmount '~/afs/'"
+    umount "~/afs/"
+
+    echo "sshfs -o reconnect ivan.imbert@ssh.cri.epita.fr:/afs/cri.epita.fr/user/i/iv/ivan.imbert/u/ ~/afs"
+    sshfs -o reconnect ivan.imbert@ssh.cri.epita.fr:/afs/cri.epita.fr/user/i/iv/ivan.imbert/u/ ~/afs
+
+}
+
+
 
 testC() { 
     gcompile -o $1 $1.c && ./$1 | cat -e
@@ -88,3 +97,8 @@ bind 'set mark-symlinked-directories on'
 
 setxkbmap -option caps:escape
 # curl parrot.live 
+
+
+export PGDATA="$HOME/postgres_data"
+export PGHOST="/tmp"
+
