@@ -4,7 +4,7 @@
 
 ### nvim packet manager 
 
-{Packer repo}[https://github.com/wbthomason/packer.nvim]
+[Packer repo](https://github.com/wbthomason/packer.nvim)
 
 Clone the repository using :
 ```sh
@@ -32,7 +32,7 @@ you can try it by using `:PackerSync`
 
 ### Telescope Fuzzy Finder
 
-(fuzzy finder repo)[https://github.com/nvim-telescope/telescope.nvim]
+[fuzzy finder repo](https://github.com/nvim-telescope/telescope.nvim)
 
 Add these lines to the `packer.lua` file right before the `end)` line 
  
@@ -83,7 +83,7 @@ SetColorScheme()
 
 Now it's time to use TreeSitter to get better colors and fast stuff
 
-(TreeSitter repo)[https://github.com/nvim-treesitter/nvim-treesitter]
+[TreeSitter repo](https://github.com/nvim-treesitter/nvim-treesitter)
 
 You can just insert this line in the `packer.lua` file :
 ```lua
@@ -126,7 +126,7 @@ You can now source the file using `:so` to set everything up and some downloadin
 You now have a parser taking care of well coloring your nvim
 
 ### Harpoon
-(Harpoon repo)[https://github.com/ThePrimeagen/harpoon]
+[Harpoon repo](https://github.com/ThePrimeagen/harpoon)
 
 I don't really use it but it can be usefull if you want ot have easy access to selected files, first insert this line to `packer.lua`
 
@@ -150,11 +150,11 @@ vim.keymap.set("n", "<C-s>", function() ui.nav_file(4) end)
 
 ### UndoTree
 
-don't use it either but is quite nice you can look at it's repo (UndoTree)[https://github.com/mbbill/undotree]
+don't use it either but is quite nice you can look at it's repo [UndoTree](https://github.com/mbbill/undotree)
 
 ### Vim fugitive (git integration)
 
-(vim fugitive Repo)[https://github.com/tpope/vim-fugitive]
+[vim fugitive Repo](https://github.com/tpope/vim-fugitive)
 
 just add the line in `packer.lua`
 
@@ -170,7 +170,7 @@ vim.keymap.set("n", "<leader>gs", vim.cnd.Git)
 
 ### LSP-0
 
-For the LSP, I took (LSP-0)[https://github.com/VonHeikemen/lsp-zero.nvim]
+For the LSP, I took [LSP-0](https://github.com/VonHeikemen/lsp-zero.nvim)
 
 For this add those lines to the `packer.lua`
 
