@@ -4,7 +4,7 @@
 
 ### nvim packet manager 
 
-{Packer repo}[https://github.com/wbthomason/packer.nvim]
+(Packer repo)[https://github.com/wbthomason/packer.nvim]
 
 Clone the repository using :
 ```sh
