@@ -211,6 +211,33 @@ lsp.setup()
 Then each time you'll open a new type of file, the plugin will ask you which matching lsp you want to install, you'll have the possibility to see all available plugins 
 
 
+Still need to print out each compilation error, not yet shown directly
 
 
+### Comment integration
+
+[Comment Repo](https://github.com/numToStr/Comment.nvim)
+
+Insert those lines to your `packer.lua` 
+
+```lua
+use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+}
+```
+
+and this line to the `after/plugin/comment.lua`
+
+```lua
+require('Comment').setup()
+```
+
+### Surround integration
+
+[Surround Repo](https://github.com/kylechui/nvim-surround)
+
+Still WIP, not yet installed.
 
